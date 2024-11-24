@@ -117,6 +117,7 @@ set CGO_ENABLED=0
 set LDFLAGS=-s -w
 
 :: Build the application
+cls
 echo Building for %GOOS% %GOARCH%...
 go build -ldflags "%LDFLAGS%"
 if %errorlevel% neq 0 (
