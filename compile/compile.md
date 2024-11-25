@@ -26,8 +26,6 @@
 ## meshDL
 Log into your Mesh page using the super admin account and go to "My Devices". Under there, you will see a group named TacticalRMM. Next to it, you'll see a button named "Add Agent". Click on that button and select the OS you need (for Linux, select Linux / BSD / macOS Binary Installer). Select the system type matching the system you want to install the Tactical RMM agent on. Copy the command URL, which will look something like `wget -O meshagent "https://mesh.domain.example/meshagents?id=XXXXXXXXXXXXXXXXXXXXX&installflags=0&meshinstall=6"`. Paste the URL part into the `meshDL`.
 
-On the RMM webpage, on the left side, you will see all of your clients. Hover over the client to get the ID (e.g., 1). Under the site, hover the mouse over it to note the ID. Paste these into `clientID` and `siteID`.
-
 ## Token (not yet tested if it works), clientID, and siteID
 Click on Agents -> Install Agent and select the correct client and site -> Installation Method, and select Manual -> Show Manual Install. Copy the auth token, client ID, and site ID (all marked in red).
 
