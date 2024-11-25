@@ -29,6 +29,6 @@ Log into your Mesh page using the super admin account and go to "My Devices". Un
 On the RMM webpage, on the left side, you will see all of your clients. Hover over the client to get the ID (e.g., 1). Under the site, hover the mouse over it to note the ID. Paste these into `clientID` and `siteID`.
 
 ## Token (not yet tested if it works), clientID, and siteID
-Click on Agents -> Install Agent -> Installation Method, and select Manual -> Show Manual Install. Copy the auth token, clientID, and siteID (all marked in red).
+Click on Agents -> Install Agent and select the correct client and site -> Installation Method, and select Manual -> Show Manual Install. Copy the auth token, client ID, and site ID (all marked in red).
 
 ![Instruction Image](https://i.ibb.co/s2NWBmD/image-2024-11-25-155736001.png)
