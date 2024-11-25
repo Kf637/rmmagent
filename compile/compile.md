@@ -3,7 +3,11 @@
 
 **NOTE:** Ensure that Git and Go are installed.
 
-1. [Download `Build TRMM Agent.bat`](./Build%20TRMM%20Agent.bat)
+**Git** Install: https://git-scm.com/downloads  
+**Go** Install: https://go.dev/doc/install
+
+
+1. [Download `Build TRMM Agent.bat (Windows Only)`](./Build%20TRMM%20Agent.bat)
 2. Run the batch file and select the OS and architecture.
 3. Once the compilation is complete, you will be prompted to choose where to move the compiled application.
 
