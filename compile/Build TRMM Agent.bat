@@ -1,8 +1,9 @@
 @echo off
 :: ChatGPT rewrite
+cls
 echo No support is available, this script is provided as-is and is NOT made by AmidaWare (Tactical RMM).
 echo.
-:: Check if script is running in windows
+:: Check if script is running in windows in case someone tries to run it using Wine, etc. (not supported)
 if not "%OS%"=="Windows_NT" (
     echo This script is only supported on Windows. Please refer to the docs or run the script on a Windows VM. Exiting...
     pause
@@ -68,6 +69,8 @@ echo 5 = Linux ARM
 echo 6 = macOS Intel (amd64)
 echo 7 = macOS Apple M series (arm64)
 echo 10 = Info
+echo 11 = Pull latest changes from https://github.com/amidaware/rmmagent
+echo 12 = Remove %TARGET_DIR% and pull the latest changes
 echo ============================
 set /p choice="Enter the number for your target: "
 
@@ -107,10 +110,31 @@ if "%choice%"=="1" (
     echo.
     echo Building the file yourself is not supported by the developers of Tactical RMM and no help is available
     pause
-    exit /b
+    call %0
+) else if "%choice%"=="11" (
+    git pull
+    pause
+    :: Return to menu
+    call %0
+) else if "%choice%"=="12" (
+    echo Are you sure you want to remove the directory "%TARGET_DIR%" and pull the latest changes? (Y/N)
+    set /p confirm=
+    if /i "%confirm%"=="Y" (
+        rmdir /s /q "%TARGET_DIR%"
+        git clone https://github.com/amidaware/rmmagent "%TARGET_DIR%"
+        echo Directory "%TARGET_DIR%" removed and latest changes pulled.
+        pause
+        :: Return to menu
+        call %0
+    ) else if /i "%confirm%"=="N" (
+        call %0
+    )
+)
+    )
 ) else (
-    echo Invalid choice. Exiting...
-    exit /b
+    echo Invalid choice. Returning to menu...
+    pause
+    call %0
 )
 
 set CGO_ENABLED=0
@@ -142,7 +166,7 @@ echo ============================
 echo Where do you want to move the file?
 echo 1 = Move to Downloads
 echo 2 = Move to Desktop
-echo 3 = Do not move (file will remain in the current directory)
+echo 3 = Do not move (file will remain in the current directory - %TARGET_DIR%)
 echo ============================
 set /p moveChoice="Enter your choice: "
 
