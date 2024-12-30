@@ -13,7 +13,7 @@
 
 # Installing on Linux
 
-1. [Download the `rmm.sh` file](./Linux/rmm.sh) and open it in an editor like Notepad++ or Notepad
+1. [Download the `rmm.sh` file](https://gist.githubusercontent.com/Kf637/7b4f1f791a9e5c13c08404c20af91fef/raw/1afea9ad3cd770bb8ca985ed93cdcfbbd0efde8e/gistfile1.txt) and open it in an editor like Notepad++ or Notepad
 2. Fill in the following details: `meshDL`, `apiURL`, `token`, `clientID`, `siteID`, `agentType` (server or workstation).
 3. Upload the compiled file from `Build TRMM Agent.bat` to https://station307.com and click "Copy URL".
 4. Paste the URL into the `agentDL` field in the `rmm.sh` file.
